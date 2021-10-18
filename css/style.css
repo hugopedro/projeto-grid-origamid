@@ -17,6 +17,8 @@ a {
 
 img {
   max-width: 100%; /* Controla o tamanho das imagens, diminui de acordo c conteudo */
+  display: block; /* Sem isso as imagens vão ter pixels em branco a mais */
+  border-radius: 5px; /* Arredonda */
 }
 
 
@@ -120,15 +122,36 @@ img {
   background: #B07DFB;
 }
 
+/* CONTENT */
+
 .content {
   grid-area: content;
 }
 
+/* ANUNCIOS */
+
 .anuncios {
   grid-area: anuncios;
+  background: #fafbfc;
+  display: grid;
+  align-content: start;
+  padding: 30px;
+  grid-gap: 30px; /* equivale ao grid-row-gap e grid-column-gap, Serve para dar um
+  espaçamento entre os itens do grid, que no caso são os dois anuncios, vai funcionar
+  mesmo quando diminuir a tela. O grid gap não adiciona os px para os lados do grid
+  e sim entre os elementos */
 }
+
+/* FOOTER */
 
 .footer {
   grid-area: footer;
+  background: linear-gradient(135deg, #8844ee, #B07DFB);
+}
+
+.footer p{
+  color: white;
+  text-align: center;
+  padding: 30px;
 }
 

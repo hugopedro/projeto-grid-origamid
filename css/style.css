@@ -220,6 +220,48 @@ p {
   top: 2px;
 }
 
+.destaque {
+  font-size: 0.875em;
+  color: #B07DFB;
+  max-width: 16em;
+}
+
+.citacao p {
+  font-size: 1.5em;
+  font-style: italic;
+  text-align: center; /* sem isso ao esticar a tela o painel ia aumentar e o 
+  texto nao ia ficar no centro */
+  max-width: 500px;
+  margin: 0 auto; /* alinha o texto ao centro com o auto */
+  color: white
+}
+
+.atributos li {
+  color: white;
+  font-family: Courier, monospace;
+  font-size: 1.125em;
+  padding: 15px;
+  
+}
+
+.atributos li + li {
+ border-top: 2px solid #B07DFB;
+ /* isso permite desenhar as pequenas divisórias, sem colocar na primeira que
+ é o topo, afinal li + li mexe num li que tenha uma antes !*/
+
+}
+
+
+.citacao, .atributos {
+  align-self: start; /* Resolve o problema do painel de atributos expandir embaixo a 
+  ponto de ficar espaço vazio quando mexe na resolução da tela, ou seja não é mais
+  o padrão stretch! */
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44,44,44, 0.15);
+  background: linear-gradient(135deg, #8844EE, #B07DFB);
+}
+
 /* ANUNCIOS */
 
 .anuncios {

@@ -16,8 +16,9 @@ a {
 }
 
 img {
-  max-width: 100px;
+  max-width: 100%; /* Controla o tamanho das imagens, diminui de acordo c conteudo */
 }
+
 
 /* GRID GERAL */
 
@@ -36,9 +37,61 @@ img {
   /* Agora é necessário posicionar os elementos */
 }
 
+/*HEADER */
+
 .header {
   grid-area: header; /* Faz o header pegar de ponta-a-ponta */
-} /* É interessante usar a mesma classe do nome do areas para facilitar */
+ /* É interessante usar a mesma classe do nome do areas para facilitar */
+  background: linear-gradient(135deg, #8844ee, #B07DFB);
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr auto; /* 1fr do logo e o menu auto, a marca cresceu de ponta-a-ponta */
+  align-items: center; /* alinha o logo no centro do header  (align é vertical )*/
+  /* Para alinhar o logo no canto esquerdo e o menu no canto direito usou-se o grid
+  então na linha do header que pega de ponta-a-ponta criou-se um outro grid que não
+  tem nada a ver com o do lado de fora */
+  
+}
+
+.logo {
+  max-width: 200px; /* sem isso o logo ficaria do tamanho bruto - gigante */
+  /* Eaí o grid ia expandir, ficando inviável */
+}
+
+.header nav ul{
+  /* o menu tem que ser display flex, tem que ficar um do lado do outro */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header nav a {
+  display: block;
+  padding: 10px; /* Cria uma área de contato maior no menu, bom pro mobile */
+  color: white;
+  font-size: 1.125em;
+  background: rgba(0,0,0, .1); /* Cria fundinho opaco nos botões do menu*/
+  border-radius: 5px;
+  transition: 0.1s; /* Não deixa a passada do mouse do botão com cara de anos 90 */
+  /* o transition deve ser colocado aqui (no item) e não no hover, se nao só fará
+  a animação uma vez */
+}
+
+.header nav a:hover {
+  background: rgba(0,0,0, .5); /* Deixa o botão em destaque ao passar o mouse*/ 
+}
+
+.header li + li {
+  margin-left: 30px
+  /*
+    Faz com que cria um espaço entre os botões do menu (li no html), e só os que 
+    tem um li antes do li, ou seja cria um espaço entre o segundo e o terceiro botão
+    o primeiro não porque se não ia invadir o espaço de outra coisa, então isso é um
+    hack útil, o + signfifica todo li que aparecer depois de um li 
+    (lê de trás pra frente), o primeiro li não adicionou a margin porque nao tem
+    nenhum antes, e o .header pois essa regra se aplica apenas aos li que estão
+    dentro da classe header
+  */;
+}
 
 .sidenav {
   grid-area: sidenav;

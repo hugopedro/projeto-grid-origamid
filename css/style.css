@@ -151,6 +151,75 @@ img {
   isso garante que ela ficará alinhada ao final */
 }
 
+/* ESTILOS CONTENT */
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  letter-spacing: -0.005em; /* reduz espaçamento das letras, é só um mimo tipográfico */
+  color: rgba(0, 0, 0, .7); /* Facilita a leitura porque a letra não fica tão preta */
+}
+
+.informacoes p + p { /* Quero falar com o p que vem após o outro p */
+  margin-top: 30px; /* Se fosse só o p o p de cima ia ficar com mais margem onde nao deveria*/
+}
+
+/* TITULO */
+
+.titulo {
+  color: #B07DFB;
+}
+
+.titulo h1 {
+  font-size: 3.75em;
+  line-height: 1; /* Deixa a linha do titulo um pouco mais grudada, é estético */
+  font-weight: 700; /* 700 é o valor que tá puxando da tipografia la no import do html */
+}
+
+.titulo span {
+  font-size: 0.875em; /* 14 pixels */
+  font-style: italic;
+}
+
+/* CARACTERÍSTICAS */
+
+.caracteristicas {
+  display: flex;
+  align-items: flex-start; /* */
+}
+
+.caracteristicas > div {
+  width: 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #8844ee, #B07DFB);
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  position: relative;
+}
+
+.caracteristicas > div:first-child {
+  margin-right: 30px; /* Separa os itens */
+}
+
+.caracteristicas span {
+  display: block;
+  color: #B07DFB;
+}
+
+.numero {
+  font-size: 3em;
+  line-height: 1;
+  margin: 10px auto;
+}
+
+.rotulo {
+  background: white;
+  border-radius: 0 0 5px 5px; /* 0 da borda esq e dir de cima e 5px das bordas embaixo */
+  padding: 5px 0;
+  position: relative; 
+  top: 2px;
+}
+
 /* ANUNCIOS */
 
 .anuncios {

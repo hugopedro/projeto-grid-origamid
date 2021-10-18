@@ -1,7 +1,58 @@
+body, p, h1, ul, li, blockquote {
+  padding: 0px;
+  margin: 0px;
+}
+
 body {
-  
+  font-family: "Volkorn", Georgia, serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 img {
   max-width: 100px;
 }
+
+/* GRID GERAL */
+
+.estrutura {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) 3fr 300px; 
+
+  /* uma pra sidenav(min 160px) - pra quando ficar pequeno nao diminuir mais ainda,
+   outra conteudo, outra anuncio (que nesse caso é desejavel imagem de 300px)
+  3fr pois é desejavel que o conteudo expanda 3 vezes mais que a sidenav */
+
+  grid-template-areas: "header header header"
+                      "sidenav content anuncios"
+                      "footer footer footer"
+
+  /* Agora é necessário posicionar os elementos */
+}
+
+.header {
+  grid-area: header; /* Faz o header pegar de ponta-a-ponta */
+} /* É interessante usar a mesma classe do nome do areas para facilitar */
+
+.sidenav {
+  grid-area: sidenav;
+}
+
+.content {
+  grid-area: content;
+}
+
+.anuncios {
+  grid-area: anuncios;
+}
+
+.footer {
+  grid-area: footer;
+}
+

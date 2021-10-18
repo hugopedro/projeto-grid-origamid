@@ -93,8 +93,31 @@ img {
   */;
 }
 
+/* SIDENAV */
+
 .sidenav {
   grid-area: sidenav;
+  background: #fafbfc; /* A primeira coisa é marcar territorio do sidenav, bem clarinho*/
+  padding: 30px /* Valor padrão de padding */;
+
+}
+
+.sidenav li a { /* sidenav eh onde está os ícones */
+  display: block;
+  min-width: 60px; /* Menos que isso destrói o svg */
+  max-width: 100px; /* 100px é bom, ter botão gigante não adianta */
+  margin: 0 auto 30px auto; /* Topo 0 lado auto pra baixo 30px outro lado auto */
+  /* auto permite que o ícone fique sempre no centro, nao importa o tamanho do sidenav */
+  background: white;
+  padding: 20px;
+  border-radius: 5px; /* bordinhas um pouquinho arredondadas */
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  transition: .1s ease-out /* Saída suave ao mover o ponteiro do mouse */;
+
+}
+
+.sidenav li a:hover {
+  background: #B07DFB;
 }
 
 .content {

@@ -126,6 +126,29 @@ img {
 
 .content {
   grid-area: content;
+  max-width: 900px;
+  margin: 0 auto; /* Porque se crescer num telão começa a gerar um espaço em branco
+  e aí não fica no centro, isso garante que fique. */
+  padding: 30px; /* Geralmente nos projetos o padding padrão é 30px */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* gera duas colunas */
+  grid-gap: 30px;
+}
+
+.col-wide {
+  grid-column: 1 / -1;
+}
+
+.imagem-1 {
+  grid-row: span 2;
+  align-self: end;
+  /* Para pegar duas linhas, conta do inicio, ou seja expandiu duas linhas */
+}
+
+.imagem-2 {
+  align-self: end;
+  /* A imagem estava subindo um pouco conforme o texto de cima ficava curto,
+  isso garante que ela ficará alinhada ao final */
 }
 
 /* ANUNCIOS */

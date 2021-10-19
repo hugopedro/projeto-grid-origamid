@@ -120,6 +120,21 @@ img {
   */;
 }
 
+@media(max-width: 760px) { /* Se estiver abaixo de 760px ... */
+  .header {
+    grid-template-columns: auto; /* O grid detecta que tem pouco tamanho e deixa em uma só coluna tudo*/
+  }
+  .logo {
+    margin-bottom: 20px; /* a alteração acima deixou logo e botoes colados, isso separa*/
+  }
+  .header nav a { /* Diminuiu a tipografia para prever estourar o espaço de botão */
+    font-size: 1em;
+  }
+  .header li + li { /* Diminui o espaçamento entre botoes do header */
+    margin-left: 10px;
+  }
+}
+
 /* SIDENAV */
 
 .sidenav {
@@ -145,6 +160,59 @@ img {
 
 .sidenav li a:hover {
   background: #B07DFB;
+}
+
+@keyframes seta {
+  from {
+    right: 30px;
+  }
+  to {
+    right: 20px;
+  }
+}
+
+@media(max-width: 760px) {
+  /* Se refere ao sidenav, ao diminuir a tela os botões da sidenav ficam um embaixo
+  do outro, é porque por padrão <li> é display: block, para alterar isso coloca-se
+  display: flex, isso garante que os ícones fiquem de lado
+  */
+
+  .sidenav {
+    position: relative;
+    overflow-x: auto; /* faz com que quando o menu estoure o eixo x o scroll
+    nao fique no fim da pagina e sim no fim da area referente ao que foi estourado */
+  }
+
+  .sidenav::after {
+    content: '→';
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: rgba(0,0,0.3);
+    animation: seta .5s ease-in 0s infinite alternate;
+  }
+
+  .sidenav ul {
+    display: flex;
+  }
+
+  .sidenav li {
+    flex: 1 0 60px; /* flex-grow: 1, flex-shrink: 0 e flex-basis: 60px */
+    /* flex-grow: 1 -> O crescimento é distribuído igualmente antes e depois do
+    conteúdo de cada elemento
+    flex-shrink: 0 -> Não permite a diminuição dos itens
+    flex-basis: 60px -> Indica o tamanho inicial do flex item antes da distribuição do espaço restante.
+    Impede que diminua mais que 60px
+    */
+  }
+
+  .sidenav {
+    padding: 0 30px;
+  }
+
+  .sidenav li a {
+    margin: 30px 30px 30px 0;;
+  }
 }
 
 /* CONTENT */

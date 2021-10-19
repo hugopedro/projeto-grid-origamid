@@ -18,7 +18,7 @@ a {
 }
 
 img {
-  max-width: 100%; /* Controla o tamanho das imagens, diminui de acordo c conteudo */
+  width: 100%; /* Controla o tamanho das imagens, diminui de acordo c conteudo */
   display: block; /* Sem isso as imagens vão ter pixels em branco a mais */
   border-radius: 5px; /* Arredonda */
 }
@@ -228,6 +228,12 @@ img {
   grid-gap: 30px;
 }
 
+@media (max-width: 600px) {
+  .content {
+    grid-template-columns: auto;
+  }
+}
+
 .col-wide {
   grid-column: 1 / -1;
 }
@@ -367,6 +373,7 @@ p {
   espaçamento entre os itens do grid, que no caso são os dois anuncios, vai funcionar
   mesmo quando diminuir a tela. O grid gap não adiciona os px para os lados do grid
   e sim entre os elementos */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 /* FOOTER */

@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700&display=swap');
+
 body, p, h1, ul, li, blockquote {
   padding: 0px;
   margin: 0px;
 }
 
 body {
-  font-family: "Volkorn", Georgia, serif;
+  font-family: 'Vollkorn', serif;
 }
 
 li {
